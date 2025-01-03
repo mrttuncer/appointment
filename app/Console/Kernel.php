@@ -12,9 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // Planlanan komutlarınızı buraya ekleyin
-
-        $schedule->command('app:check-appointment-date')->everyFiveMinutes();
+        // $schedule->command('inspire')->hourly();
+        $schedule->command('app:check-appointment')->everyMinute();
     }
 
     /**

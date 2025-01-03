@@ -5,14 +5,14 @@ namespace App\Console\Commands;
 use App\Jobs\SendAvailableDatesJob;
 use Illuminate\Console\Command;
 
-class CheckAppointmentDate extends Command
+class CheckAppointment extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'app:check-appointment-date';
+    protected $signature = 'app:check-appointment';
 
     /**
      * The console command description.
@@ -27,7 +27,7 @@ class CheckAppointmentDate extends Command
     public function handle()
     {
         $telegramToken = env('TELEGRAM_BOT_TOKEN');
-        $chatId = '1553035293';
+        $chatId = env('CHAT_ID');
         SendAvailableDatesJob::dispatch($telegramToken, $chatId);
     }
 }
