@@ -51,7 +51,7 @@ class SendAvailableDatesJob implements ShouldQueue
                     $source_country = $entry['source_country'] ?? null;
                     $appointment_date = $entry['appointment_date'] ?? null;
 
-                    if (in_array($mission_country, ["Italy", "Netherlands"]) && $source_country === "Turkiye") {
+                    if (in_array($mission_country, ["Italy"]) && $source_country === "Turkiye") {
                         $message = $appointment_date
                             ? "{$mission_country} için randevu tarihi: {$appointment_date}\n"
                             : "{$mission_country} için mevcut randevu yok.\n";
